@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @series_type.name %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @series_type.schedule %>
+</p>
+
+
+<%= link_to 'Edit', edit_series_type_path(@series_type) %> |
+<%= link_to 'Back', series_types_path %>

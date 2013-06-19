@@ -1,4 +1,20 @@
 Comicdex::Application.routes.draw do
+  resources :issues
+
+
+  resources :volumes
+
+
+  resources :series
+
+
+  resources :series_types
+
+
+  resources :publishers
+
+
+  root :to => 'issues#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

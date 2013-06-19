@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  number: 1
+  cover: 
+  publication_date: 2013-06-19
+  volume: 
+
+two:
+  title: MyString
+  description: MyText
+  number: 1
+  cover: 
+  publication_date: 2013-06-19
+  volume: 

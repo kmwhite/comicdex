@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @volume.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @volume.number %>
+</p>
+
+<p>
+  <b>Series:</b>
+  <%= @volume.series %>
+</p>
+
+
+<%= link_to 'Edit', edit_volume_path(@volume) %> |
+<%= link_to 'Back', volumes_path %>
