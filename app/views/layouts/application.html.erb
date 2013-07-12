@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title>ComicDex - <%= content_for?(:title) ? yield(:title) : "" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -35,9 +35,7 @@
                   <!-- Title Area -->
                   <li class="name">
                     <h1>
-                      <a href="#">
-                        Top Bar Title
-                      </a>
+                      <a href="/">Comicdex </a>
                     </h1>
                   </li>
                   <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -46,44 +44,19 @@
                 <section class="top-bar-section">
                   <!-- Right Nav Section -->
                   <ul class="right">
+                    <li><a href="#">Publishers</a></li>
+                    <li><a href="#">Series</a></li>
+                    <li><a href="#">Series Types</a></li>
+                    <li><a href="#">Issues</a></li>
                     <li class="divider"></li>
                     <li class="has-dropdown">
-                      <a href="#">Main Item 1</a>
+                      <a href="#">User (uid-here)</a>
                       <ul class="dropdown">
-                        <li><label>Section Name</label></li>
-                        <li class="has-dropdown">
-                          <a href="#" class="">Has Dropdown, Level 1</a>
-                          <ul class="dropdown">
-                            <li><a href="#">Dropdown Options</a></li>
-                            <li><a href="#">Dropdown Options</a></li>
-                            <li><a href="#">Level 2</a></li>
-                            <li><a href="#">Subdropdown Option</a></li>
-                            <li><a href="#">Subdropdown Option</a></li>
-                            <li><a href="#">Subdropdown Option</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Wish List</a></li>
+                        <li><a href="#">Own List</a></li>
+                        <li><a href="#">Settings</a></li>
                         <li class="divider"></li>
-                        <li><label>Section Name</label></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">See all &rarr;</a></li>
-                      </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#">Main Item 2</a></li>
-                    <li class="divider"></li>
-                    <li class="has-dropdown">
-                      <a href="#">Main Item 3</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">See all &rarr;</a></li>
+                        <li><a href="#">Log Out &rarr;</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -101,7 +74,7 @@
     
             <div class="large-4 small-12 columns">
     
-              <img src="http://placehold.it/500x500&text=Logo">
+              <img src="http://placehold.it/500x500&text=<%= content_for?(:logo) ? yield(:logo) : "NoLogo" %>">
     
               <div class="hide-for-small panel">
                 <h3>Header</h3>
@@ -121,92 +94,9 @@
     
     
         <!-- Thumbnails -->
-    
-            <div class="large-8 columns">
-              <div class="row">
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-    
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-    
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-              </div>
-    
+          <%= yield %>
         <!-- End Thumbnails -->
-    
-    
-        <!-- Managed By -->
-              <div class="row">
-                <div class="large-12 columns">
-                  <div class="panel">
-                    <div class="row">
-    
-                      <div class="large-2 small-6 columns">
-                        <img src="http://placehold.it/300x300&text=Site Owner">
-                      </div>
-    
-                      <div class="large-10 small-6 columns">
-                        <strong>This Site Is Managed By<hr/></strong>
-    
-                        Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
-                      </div>
-    
-                    </div>
-                  </div>
-                </div>
-    
-        <!-- End Managed By -->
-    
-              </div>
-            </div>
+
           </div>
     
     
@@ -217,16 +107,7 @@
               <div class="row">
     
                 <div class="large-6 columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
-                </div>
-    
-                <div class="large-6 columns">
-                  <ul class="inline-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                  </ul>
+                  <p>&copy; Kristofer M White &amp; Jesse R Adams, 2012-2013</p>
                 </div>
     
               </div>

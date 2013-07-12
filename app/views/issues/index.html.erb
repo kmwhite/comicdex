@@ -1,33 +1,16 @@
-<h1>Listing issues</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Number</th>
-    <th>Cover</th>
-    <th>Publication date</th>
-    <th>Volume</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @issues.each do |issue| %>
-  <tr>
-    <td><%= issue.title %></td>
-    <td><%= issue.description %></td>
-    <td><%= issue.number %></td>
-    <td><%= issue.cover %></td>
-    <td><%= issue.publication_date %></td>
-    <td><%= issue.volume %></td>
-    <td><%= link_to 'Show', issue %></td>
-    <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-    <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+            <div class="large-8 columns" style="overflow: auto; height: 500px">
+              <div class="row">
+                <div class="large-4 small-6 columns">
+                  <img src="http://placehold.it/500x500&text=Thumbnail">
+                  <div class="panel">
+                    <h5><%= issue.number %> - <%= issue.title %></h5>
+                    <h6 class="subheader"><%= issue.description %></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
 <% end %>
-</table>
 
 <br />
-
 <%= link_to 'New Issue', new_issue_path %>

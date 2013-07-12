@@ -1,20 +1,20 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>Recent Episodes<% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @volume.name %>
-</p>
+            <div class="large-8 columns" style="overflow: auto; height: 500px">
+              <div class="row">
+<% @volume.issues.each do |issue| %>
+                <div class="large-4 small-6 columns">
+                  <img src="http://placehold.it/500x500&text=Thumbnail">
+                  <div class="panel">
+                    <h5><%= issue.number %> - <%= issue.title %></h5>
+                    <h6 class="subheader"><%= issue.description %></h6>
+                  </div>
+                </div>
+<% end %>
+              </div>
+            </div>
 
-<p>
-  <b>Number:</b>
-  <%= @volume.number %>
-</p>
-
-<p>
-  <b>Series:</b>
-  <%= @volume.series %>
-</p>
-
-
+<br />
+<%= link_to 'New Issue', new_issue_path(@volume.id) %>
 <%= link_to 'Edit', edit_volume_path(@volume) %> |
 <%= link_to 'Back', volumes_path %>
