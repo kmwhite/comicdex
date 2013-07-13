@@ -74,11 +74,16 @@
     
             <div class="large-4 small-12 columns">
     
-              <img src="http://placehold.it/500x500&text=<%= content_for?(:logo) ? yield(:logo) : "NoLogo" %>">
+              <img src="http://placehold.it/500x500&text=<%= content_for?(:logo) ? yield(:logo) : 'NoLogo' %>">
     
               <div class="hide-for-small panel">
-                <h3>Header</h3>
-                <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+                <h3><%= content_for?(:header) ? yield(:header) : 'Header' %> </h3>
+                <h5 class="subheader">
+                  <% if content_for?(:subheader) %>
+                    <%= yield(:subheader) %>
+                  <% else %>
+                    Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+                  <% end %>
                 </h5>
               </div>
     

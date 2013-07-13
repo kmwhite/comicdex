@@ -1,4 +1,14 @@
-<% content_for :title do %>Recent Episodes<% end %>
+<% content_for :title do %> <%= @volume.name %> <% end %>
+<% content_for :header do %> <%= @volume.name %> <% end %>
+<% content_for :subheader do %>
+<span class="title" style="font-weight: bold;">Publisher:</span><br>
+<%# We should be able to remove the #try call by validating the presence of a Publisher on the Series model %>
+<%#In addition to validating the presence of a Series on the Volume model%>
+<span style="font-size: 0.75em; text-align: right;" class="info"><%= @volume.series.publisher.name || 'No Known Publisher' %></span> <br>
+<span class="title" style="font-weight: bold;">Run Dates:</span><br>
+<%#<span style="font-size: 0.75em; text-align: right;" class="info">April 1997 - February 2000</span>%>
+<span style="font-size: 0.75em; text-align: right;" class="info"><%= @volume.publication_date_range(true) %></span>
+<% end %>
 
             <div class="large-8 columns" style="overflow: auto; height: 500px">
               <div class="row">
