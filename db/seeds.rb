@@ -19,9 +19,9 @@ Volume.create([
 ], :without_protection => true )
 
 Issue.create([
-  { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 1, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
-  { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 2, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
-  { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 3, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
+  { :title => "Knuckles: The Dark Legion", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 1, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
+  { :title => "Knuckles: The Dark Legion", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 2, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
+  { :title => "Knuckles: The Dark Legion", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 3, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
   { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 4, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
   { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 5, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
   { :title => "Knuckles the Echidna", :description => "Tales from Sonic's friendly nemesis, Knuckles", :number => 6, :cover => nil, :publication_date => nil, :volume_id => 1, :created_at => "2013-07-12 18:32:41", :updated_at => "2013-07-12 18:32:41" },
