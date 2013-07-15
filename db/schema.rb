@@ -11,17 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619212537) do
+ActiveRecord::Schema.define(:version => 20130715223047) do
 
   create_table "issues", :force => true do |t|
-    t.string   "title",            :null => false
+    t.string   "title",              :null => false
     t.text     "description"
-    t.integer  "number",           :null => false
-    t.binary   "cover"
-    t.date     "publication_date", :null => false
+    t.integer  "number",             :null => false
+    t.date     "publication_date",   :null => false
     t.integer  "volume_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   add_index "issues", ["volume_id"], :name => "index_issues_on_volume_id"
