@@ -1,7 +1,7 @@
 class CreateSeries < ActiveRecord::Migration
   def change
     create_table :series do |t|
-      t.string :name
+      t.string :name, null: false
       t.text :description
       t.references :publisher
       t.references :series_type

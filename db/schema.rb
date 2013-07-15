@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(:version => 20130619212537) do
 
   create_table "issues", :force => true do |t|
-    t.string   "title"
+    t.string   "title",            :null => false
     t.text     "description"
-    t.integer  "number"
+    t.integer  "number",           :null => false
     t.binary   "cover"
-    t.date     "publication_date"
+    t.date     "publication_date", :null => false
     t.integer  "volume_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(:version => 20130619212537) do
   add_index "issues", ["volume_id"], :name => "index_issues_on_volume_id"
 
   create_table "publishers", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.binary   "logo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "series", :force => true do |t|
-    t.string   "name"
+    t.string   "name",           :null => false
     t.text     "description"
     t.integer  "publisher_id"
     t.integer  "series_type_id"
@@ -46,15 +46,15 @@ ActiveRecord::Schema.define(:version => 20130619212537) do
   add_index "series", ["series_type_id"], :name => "index_series_on_series_type_id"
 
   create_table "series_types", :force => true do |t|
-    t.string   "name"
-    t.string   "schedule"
+    t.string   "name",       :null => false
+    t.string   "schedule",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "volumes", :force => true do |t|
-    t.string   "name"
-    t.integer  "number"
+    t.string   "name",       :null => false
+    t.integer  "number",     :null => false
     t.integer  "series_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
