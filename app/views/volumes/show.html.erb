@@ -14,17 +14,22 @@
               <div class="row">
 <% @volume.issues.each do |issue| %>
                 <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-                  <div class="panel">
-                    <h5><%= issue.number %> - <%= issue.title %></h5>
-                    <h6 class="subheader"><%= issue.description %></h6>
-                  </div>
+                  <a href="<%= issue_path(issue) %>">
+                    <div class="panel">
+                      <% if issue.cover %>
+                      <%= image_tag issue.cover.url(:thumb), size: "150x150" %>
+                      <% else %>
+                      <img src="http://placehold.it/500x500&text=Thumbnail">
+                      <% end %>
+                      <h5><%= issue.number %> - <%= issue.title %></h5>
+                      <h6 class="subheader"><%= issue.description %></h6>
+                      <%= render "shared/list_additions" %>
+                    </div>
+                  </a>
                 </div>
 <% end %>
               </div>
             </div>
 
 <br />
-<%= link_to 'New Issue', new_issue_path(@volume.id) %>
-<%= link_to 'Edit', edit_volume_path(@volume) %> |
-<%= link_to 'Back', volumes_path %>
+
