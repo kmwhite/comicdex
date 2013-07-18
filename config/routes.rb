@@ -14,7 +14,7 @@ Comicdex::Application.routes.draw do
   resources :publishers
 
 
-  root :to => 'issues#index'
+  root :to => 'publishers#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
