@@ -1,13 +1,12 @@
 <% content_for :title do %> <%= @volume.name %> <% end %>
 <% content_for :header do %> <%= @volume.name %> <% end %>
 <% content_for :subheader do %>
-<span class="title" style="font-weight: bold;">Publisher:</span><br>
-<%# We should be able to remove the #try call by validating the presence of a Publisher on the Series model %>
-<%#In addition to validating the presence of a Series on the Volume model%>
-<span style="font-size: 0.75em; text-align: right;" class="info"><%= @volume.series.publisher.name || 'No Known Publisher' %></span> <br>
-<span class="title" style="font-weight: bold;">Run Dates:</span><br>
-<%#<span style="font-size: 0.75em; text-align: right;" class="info">April 1997 - February 2000</span>%>
-<span style="font-size: 0.75em; text-align: right;" class="info"><%= @volume.publication_date_range(true) %></span>
+    <h6>Publisher:</h6>
+    <%# We should be able to remove the #try call by validating the presence of a Publisher on the Series model %>
+    <%#In addition to validating the presence of a Series on the Volume model%>
+    <h6 class="subheader"><%= @volume.series.publisher.try(:name) || 'No Known Publisher' %></h6>
+    <h6>Run Dates:</h6>
+    <h6 class="subheader"><%= @volume.publication_date_range(true) %></h6>
 <% end %>
 <% content_for :sidebar_links do %>
   <div class="large-12 small-12 columns panel">
