@@ -1,3 +1,6 @@
+<% content_for :title do %>
+  <%= "#{@issue.series_name} - Volume #{@issue.volume.number} - Issue #{@issue.number}" %>
+<% end %>
 <% content_for :logo do %>
   <%= @issue.cover.url(:large) %>
 <% end %>
