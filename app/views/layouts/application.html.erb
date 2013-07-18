@@ -72,25 +72,18 @@
     
       <!-- Side Bar -->
     
-            <div class="large-4 small-12 columns">
+            <div class="large-4 small-12 columns" id="sidebar">
     
-              <img src="http://placehold.it/500x500&text=<%= content_for?(:logo) ? yield(:logo) : 'NoLogo' %>">
+              <img src="<%= content_for?(:logo) ? yield(:logo) : 'http://placehold.it/500x500&text=NoLogo' %>">
     
-              <div class="hide-for-small panel">
+              <div class="hide-for-small panel" id="sidebar-data">
                 <h3><%= content_for?(:header) ? yield(:header) : 'Header' %> </h3>
                 <h5 class="subheader">
-                  <% if content_for?(:subheader) %>
-                    <%= yield(:subheader) %>
-                  <% else %>
-                    Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
-                  <% end %>
+                  <%= content_for?(:subheader) ? yield(:subheader) : 'Sub-Header' %>
                 </h5>
               </div>
 
-              <div class="large-12 small-12 columns panel">
-                <%= link_to 'New Issue', new_issue_path(@volume.id), class: 'button large-12' %>
-                <%= link_to 'Edit', edit_volume_path(@volume), class: 'button large-12' %>
-              </div>
+              <%= content_for?(:sidebar_links) ? yield(:sidebar_links) : 'Sidebar-Links' %>
     
             </div>
     

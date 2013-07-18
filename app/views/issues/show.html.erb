@@ -1,3 +1,11 @@
+<% content_for :logo do %>
+  <%= @issue.cover.url(:large) %>
+<% end %>
+<% content_for :header do %>
+  <%= @issue.title %>
+<% end %>
+<% content_for :subheader do %>Volume: <%= @issue.volume.number %><% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,18 +14,8 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @issue.description %>
-</p>
-
-<p>
   <b>Number:</b>
   <%= @issue.number %>
-</p>
-
-<p>
-  <b>Cover:</b>
-  <%= @issue.cover %>
 </p>
 
 <p>
@@ -27,9 +25,14 @@
 
 <p>
   <b>Volume:</b>
-  <%= @issue.volume %>
+  <%= @issue.volume.number %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @issue.description %>
 </p>
 
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+<%= link_to 'Back', :back %>
