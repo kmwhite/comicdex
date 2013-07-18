@@ -1,24 +1,26 @@
-<h1>Listing publishers</h1>
+<% content_for :title do %> Publishers <% end %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Logo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+            <div class="large-8 columns" style="overflow: auto; height: 500px">
+              <div class="row">
 <% @publishers.each do |publisher| %>
-  <tr>
-    <td><%= publisher.name %></td>
-    <td><%= publisher.logo %></td>
-    <td><%= link_to 'Show', publisher %></td>
-    <td><%= link_to 'Edit', edit_publisher_path(publisher) %></td>
-    <td><%= link_to 'Destroy', publisher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+                <div class="large-4 small-6 columns">
+                  <a href="<%= publisher_path(publisher) %>">
+                    <div class="panel">
+                      <% if publisher.logo %>
+                      <%= image_tag publisher.logo.url(:thumb), size: "150x150" %>
+                      <% else %>
+                      <img src="http://placehold.it/500x500&text=Thumbnail">
+                      <% end %>
+                      <h5><%= publisher.name %></h5>
+
+                      <%= link_to 'Edit', edit_publisher_path(publisher), class: 'large-12 button secondary' %>
+                      <%= link_to 'Destroy', publisher, method: :delete, data: { confirm: 'Are you sure?' }, class: 'large-12 button alert' %>
+                    </div>
+                  </a>
+                </div>
 <% end %>
-</table>
+              </div>
+            </div>
 
 <br />
 
