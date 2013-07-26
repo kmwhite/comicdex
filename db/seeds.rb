@@ -26,9 +26,9 @@ Volume.create([
 
 (1..Random.rand(50)).each do |number|
   i = Issue.create(
-    title: "Funny Fables #{number.to_s.rjust(2, '0')}",
+    title: "Funny Fables",
     number: number,
-    description: "#{number.to_s.rjust(2, '0')}",
+    description: "This is issue ##{number.to_s.rjust(2, '0')}'s description... enjoy it.",
     publication_date: 'Apr 1 2010'.to_date + (number*7),
   )
   i.volume_id = 1
@@ -36,9 +36,9 @@ Volume.create([
 end
 (1..Random.rand(50)).each do |number|
   i = Issue.create(
-    title: "Funnier Fables #{number.to_s.rjust(2, '0')}",
+    title: "Funnier Fables",
     number: number,
-    description: "#{number.to_s.rjust(2, '0')}",
+    description: "This is issue ##{number.to_s.rjust(2, '0')}'s description... enjoy it.",
     publication_date: 'Apr 1 2011'.to_date + (number*7),
   )
   i.volume_id = 2
@@ -46,9 +46,9 @@ end
 end
 (1..Random.rand(50)).each do |number|
   i = Issue.create(
-    title: "Scary Stories#{number.to_s.rjust(2, '0')}",
+    title: "Scary Stories",
     number: number,
-    description: "#{number.to_s.rjust(2, '0')}",
+    description: "This is issue ##{number.to_s.rjust(2, '0')}'s description... enjoy it.",
     publication_date: "Oct 31 #{1941+number}".to_date,
   ) 
   i.volume_id = 3
@@ -56,9 +56,9 @@ end
 end
 (1..Random.rand(50)).each do |number|
   i = Issue.create(
-    title: "Big Bada Boom #{number.to_s.rjust(2, '0')}",
+    title: "Big Bada Boom",
     number: number,
-    description: "GUNS AND EXPLOSIONS! OH YEAH * #{number.to_s.rjust(2, '0')}",
+    description: "This is issue ##{number.to_s.rjust(2, '0')}'s description... enjoy it.",
     publication_date: 'Jul 4 2000'.to_date + (number*50) + Random.rand(365),
   )
   i.volume_id = 4
