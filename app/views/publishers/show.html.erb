@@ -1,15 +1,27 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %> <%= @publisher.name %> <% end %>
+<% content_for :header do %> <%= @publisher.name %> <% end %>
+<% content_for :sidebar_links do %>
+  <div class="large-12 small-12 columns panel">
+    <%= link_to 'New Series', new_series_path(@publisher.id), class: 'button large-12' %>
+    <%= link_to 'Edit', edit_publisher_path(@publisher), class: 'button large-12' %>
+  </div>
+<% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @publisher.name %>
-</p>
+            <div class="large-8 columns" style="overflow: auto; height: 500px">
+              <div class="row">
+<% @publisher.series.each do |series| %>
+                <div class="large-4 small-6 columns">
+                  <a href="<%= series_path(series) %>">
+                    <div class="panel">
+                      <%= image_tag series.logo.url(:thumb), size: "150x150" %>
+                      <h5><%= series.name %></h5>
+                      <%= render "shared/list_additions" %>
+                    </div>
+                  </a>
+                </div>
+<% end %>
+              </div>
+            </div>
 
-<p>
-  <b>Logo:</b>
-  <%= @publisher.logo %>
-</p>
+<br />
 
-
-<%= link_to 'Edit', edit_publisher_path(@publisher) %> |
-<%= link_to 'Back', publishers_path %>
