@@ -1,3 +1,8 @@
+<% content_for :sidebar_links do %>
+  <div class="large-12 small-12 columns panel">
+    <%= link_to 'New Publisher', new_publisher_path, class: 'button large-12' %>
+  </div>
+<% end %>
 <% content_for :title do %> Publishers <% end %>
 
             <div class="large-8 columns" style="overflow: auto; height: 500px">
@@ -23,5 +28,3 @@
             </div>
 
 <br />
-
-<%= link_to 'New Publisher', new_publisher_path %>
