@@ -47,13 +47,17 @@
                     <li><a href="<%= publishers_url %>">Publishers</a></li>
                     <li class="divider"></li>
                     <li class="has-dropdown">
-                      <a href="#">User (uid-here)</a>
+                      <% if user_signed_in? %>
+                      <a href="#"><%= current_user.name || 'User Menu' %></a>
                       <ul class="dropdown">
                         <li><a href="#">Wish List</a></li>
                         <li><a href="#">Own List</a></li>
                         <li><a href="#">Settings</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Log Out &rarr;</a></li>
+                        <li><%= link_to('Logout ->', destroy_user_session_path, :method => :delete) %></li>
+                      <% else %>
+                        <%= link_to('Login', new_user_session_path)  %>
+                      <% end %>
                       </ul>
                     </li>
                   </ul>
@@ -90,7 +94,11 @@
     
     
         <!-- Thumbnails -->
-          <%= yield %>
+            <div class="large-8 columns" style="overflow: auto; height: 500px">
+              <div class="row">
+                <%= yield %>
+              </div>
+            </div>
         <!-- End Thumbnails -->
 
           </div>

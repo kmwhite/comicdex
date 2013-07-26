@@ -5,8 +5,6 @@
   <%= link_to 'Edit', edit_publisher_path(@publisher), class: 'button large-12' %>
 <% end %>
 
-            <div class="large-8 columns" style="overflow: auto; height: 500px">
-              <div class="row">
 <% @publisher.series.each do |series| %>
                 <div class="large-4 small-6 columns">
                   <a href="<%= series_path(series) %>">
@@ -18,8 +16,4 @@
                   </a>
                 </div>
 <% end %>
-              </div>
-            </div>
-
-<br />
 

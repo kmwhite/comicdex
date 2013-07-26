@@ -15,8 +15,6 @@
   <%= link_to 'New Issue', new_volume_path(@series.id), class: 'button large-12' %>
 <% end %>
 
-            <div class="large-8 columns" style="overflow: auto; height: 500px">
-              <div class="row">
 <% @series.volumes.each do |volume| %>
                 <div class="large-4 small-6 columns">
                   <a href="<%= volume_path(volume) %>">
@@ -28,8 +26,4 @@
                   </a>
                 </div>
 <% end %>
-              </div>
-            </div>
-
-<br />
 

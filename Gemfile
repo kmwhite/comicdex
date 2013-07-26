@@ -41,3 +41,5 @@ gem 'jquery-rails'
 gem 'paperclip'
 
 gem 'seed_dump'
+
+gem 'devise'

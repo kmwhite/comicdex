@@ -13,8 +13,6 @@
   <%= link_to 'Edit', edit_volume_path(@volume), class: 'small button large-12' %>
 <% end %>
 
-            <div class="large-8 columns" style="overflow: auto; height: 500px">
-              <div class="row">
 <% @volume.issues.each do |issue| %>
                 <div class="large-4 small-6 columns">
                   <a href="<%= issue_path(issue) %>">
@@ -31,8 +29,4 @@
                   </a>
                 </div>
 <% end %>
-              </div>
-            </div>
-
-<br />
 
