@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718020805) do
+ActiveRecord::Schema.define(:version => 20130726161146) do
 
   create_table "issues", :force => true do |t|
     t.string   "title",              :null => false
@@ -37,16 +37,16 @@ ActiveRecord::Schema.define(:version => 20130718020805) do
   end
 
   create_table "series", :force => true do |t|
-    t.string   "name",               :null => false
+    t.string   "name",              :null => false
     t.text     "description"
     t.integer  "publisher_id"
     t.integer  "series_type_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "cover_file_name"
-    t.string   "cover_content_type"
-    t.integer  "cover_file_size"
-    t.datetime "cover_updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "series", ["publisher_id"], :name => "index_series_on_publisher_id"
@@ -60,11 +60,15 @@ ActiveRecord::Schema.define(:version => 20130718020805) do
   end
 
   create_table "volumes", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "number",     :null => false
+    t.string   "name",              :null => false
+    t.integer  "number",            :null => false
     t.integer  "series_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "volumes", ["series_id"], :name => "index_volumes_on_series_id"
