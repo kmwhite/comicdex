@@ -11,10 +11,8 @@
     <h6 class="subheader"><%= @series.pub_name %></h6>
 <% end %>
 <% content_for :sidebar_links do %>
-  <div class="large-12 small-12 columns panel">
-    <%= link_to 'Edit', edit_series_path(@series), class: 'button large-12'%>
-    <%= link_to 'New Issue', new_volume_path(@series.id), class: 'button large-12' %>
-  </div>
+  <%= link_to 'Edit', edit_series_path(@series), class: 'button large-12'%>
+  <%= link_to 'New Issue', new_volume_path(@series.id), class: 'button large-12' %>
 <% end %>
 
             <div class="large-8 columns" style="overflow: auto; height: 500px">

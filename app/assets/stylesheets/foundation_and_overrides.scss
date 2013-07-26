@@ -28,7 +28,7 @@ $em-base: 16px !default;
 
 $default-float: left;
 
-// $body-bg: #fff;
+$body-bg: #3d3d3d;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -850,14 +850,14 @@ $default-float: left;
 
 // Background and border styles
 
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: darken(#2e2e2e, 0%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
 // Control how much we darken things on hover
 
-// $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
+$panel-function-factor: 10%;
+$panel-border-color: darken($panel-bg, $panel-function-factor);
 
 // Inner padding and bottom margin
 

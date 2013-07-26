@@ -1,10 +1,8 @@
 <% content_for :title do %> <%= @publisher.name %> <% end %>
 <% content_for :header do %> <%= @publisher.name %> <% end %>
 <% content_for :sidebar_links do %>
-  <div class="large-12 small-12 columns panel">
-    <%= link_to 'New Series', new_series_path(@publisher.id), class: 'button large-12' %>
-    <%= link_to 'Edit', edit_publisher_path(@publisher), class: 'button large-12' %>
-  </div>
+  <%= link_to 'New Series', new_series_path(@publisher.id), class: 'button large-12' %>
+  <%= link_to 'Edit', edit_publisher_path(@publisher), class: 'button large-12' %>
 <% end %>
 
             <div class="large-8 columns" style="overflow: auto; height: 500px">

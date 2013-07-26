@@ -78,9 +78,11 @@
                 <h5 class="subheader">
                   <%= content_for?(:subheader) ? yield(:subheader) : 'Your own, personal ComicBook Guy' %>
                 </h5>
-              </div>
 
-              <%= content_for?(:sidebar_links) ? yield(:sidebar_links) : nil %>
+                <hr>
+
+                <%= content_for?(:sidebar_links) ? yield(:sidebar_links) : nil %>
+              </div>
     
             </div>
     
