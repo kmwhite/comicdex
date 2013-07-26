@@ -1,6 +1,7 @@
 class Volume < ActiveRecord::Base
   belongs_to :series
   attr_accessible :name, :number
+  has_attached_file :logo, :styles => { :large => "487x750>", :medium => "325x500", :thumb => "156x240>" }, :default_url => "http://placehold.it/500x500&text=Missing%20Logo"
 
   has_many :issues
 
