@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130726161146) do
+ActiveRecord::Schema.define(:version => 20130726161147) do
 
   create_table "issues", :force => true do |t|
     t.string   "title",              :null => false
@@ -30,10 +30,13 @@ ActiveRecord::Schema.define(:version => 20130726161146) do
   add_index "issues", ["volume_id"], :name => "index_issues_on_volume_id"
 
   create_table "publishers", :force => true do |t|
-    t.string   "name",       :null => false
-    t.binary   "logo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",              :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "series", :force => true do |t|
